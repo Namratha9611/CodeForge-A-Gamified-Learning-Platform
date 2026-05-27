@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword Puzzle - CodeForge: A Gamified Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1>🧩 Technical Crossword Puzzle</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Level</span>
+                    <span class="stat-value" id="levelDisplay">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="scoreDisplay">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <div class="game-content">
+            <!-- Crossword Grid -->
+            <div class="grid-section">
+                <div id="crosswordGrid" class="crossword-grid"></div>
+                <button id="checkButton" class="btn-check">Check Answers</button>
+            </div>
+
+            <!-- Clues Section -->
+            <div class="clues-section">
+                <div class="clues-container">
+                    <div class="clues-column">
+                        <h3>📍 Across</h3>
+                        <div id="acrossClues" class="clues-list"></div>
+                    </div>
+                    <div class="clues-column">
+                        <h3>📍 Down</h3>
+                        <div id="downClues" class="clues-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-icon">🎉</div>
+                <h2 id="modalTitle">Level Complete!</h2>
+                <p id="modalMessage">Great job! Moving to next level...</p>
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">XP Earned</span>
+                        <span class="modal-stat-value" id="xpEarned">+50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Modal -->
+        <div id="completionModal" class="modal">
+            <div class="modal-content completion">
+                <div class="modal-icon">🏆</div>
+                <h2>All Levels Complete!</h2>
+                <p>Congratulations! You've mastered all crossword puzzles!</p>
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="modal-stat-label">Total Score</span>
+                        <span class="modal-stat-value" id="finalScore">0</span>
+                    </div>
+                </div>
+                <button onclick="location.reload()" class="btn-restart">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

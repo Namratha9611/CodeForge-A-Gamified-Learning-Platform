@@ -1,0 +1,234 @@
+/* The Daily Codeword - Style.css */
+:root {
+    --bg-paper: #f4f4f0;
+    --ink-black: #1a1a1a;
+    --ink-blue: #0044cc;
+    --grid-border: #333;
+    --highlight: #e6e600;
+    --highlight-faint: #ffffcc;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'Courier Prime', monospace;
+    --cell-size: 50px;
+}
+
+body {
+    background-color: #e0e0e0;
+    font-family: var(--font-mono);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: var(--ink-black);
+}
+
+.paper-container {
+    background-color: var(--bg-paper);
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+header {
+    border-bottom: 3px double var(--ink-black);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.level-info {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main Layout */
+.game-area {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Grid Section */
+.grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+#codeword-grid {
+    display: grid;
+    grid-template-columns: repeat(6, var(--cell-size));
+    grid-template-rows: repeat(6, var(--cell-size));
+    gap: 0;
+    border: 3px solid var(--grid-border);
+    background: #000;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background: white;
+    border: 1px solid #999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--ink-blue);
+    /* Handwriting color */
+}
+
+.cell.black {
+    background-color: var(--ink-black);
+    border-color: var(--ink-black);
+    pointer-events: none;
+}
+
+.cell:hover {
+    background-color: #f0f8ff;
+}
+
+.cell.selected {
+    background-color: var(--highlight-faint);
+    box-shadow: inset 0 0 0 2px var(--ink-blue);
+}
+
+.cell.same-number {
+    background-color: #e6e6fa;
+    /* Light purple for matched numbers */
+}
+
+/* Small number in corner */
+.cell-number {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 0.7rem;
+    color: #666;
+    font-family: sans-serif;
+    pointer-events: none;
+}
+
+/* Clues Section */
+.clues-section {
+    flex: 1;
+    min-width: 250px;
+    font-family: var(--font-serif);
+}
+
+h3 {
+    border-bottom: 2px solid var(--ink-black);
+    margin-top: 0;
+}
+
+.clue-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.clue-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.clue-num {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Decoder Key Bar */
+.decoder-bar {
+    margin-top: 40px;
+    border-top: 2px solid var(--ink-black);
+    padding-top: 20px;
+}
+
+.alphabet-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.key-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 30px;
+    background: #fff;
+}
+
+.key-letter {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.key-val {
+    font-size: 1rem;
+    color: var(--ink-blue);
+    height: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--bg-paper);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    border: 5px double var(--ink-black);
+}
+
+.modal h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.next-btn {
+    background: var(--ink-black);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.next-btn:hover {
+    opacity: 0.9;
+}
