@@ -1,4 +1,4 @@
-# CodeForge: The Persona Saga 🚀
+# CodeForge: A Gamified Learning Platform 🚀
 
 CodeForge is a next-generation, AI-driven gamified learning platform designed to revolutionize coding education. By combining advanced artificial intelligence with engaging game mechanics, CodeForge delivers highly personalized, adaptive learning paths for students.
 
